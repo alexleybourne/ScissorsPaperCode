@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    newGame(),
-    emojiAnim()
+    newGame()
+    newGameAnim()
 })
 
 
@@ -23,71 +23,63 @@ document.getElementsByClassName("emojiLeftText")[0].innerHTML = `${randomLeft.re
 document.getElementsByClassName("rightImage")[0].src = `${randomRight}`,
 document.getElementsByClassName("emojiRightText")[0].innerHTML = `${randomRight.replace('.png','')}`
 
-emojiAnim()
+newGameAnim()
 
 }
 
 
 // ANIMATIONS
 
+anime({
+    targets: '.content',
+    keyframes: [
+        {scale: 1, opacity: 1, duration: 1000}
+    ],
+});
 
-const leftEmoji = popmotion.styler(document.querySelector('.leftImage'))
-const rightEmoji = popmotion.styler(document.querySelector('.rightImage'))
-const emojiLeftText = popmotion.styler(document.querySelector('.emojiLeftText'))
-const emojiRightText = popmotion.styler(document.querySelector('.emojiRightText'))
+anime({
+    targets: '.topCol',
+    keyframes: [
+        {scale: 0, opacity: 0, duration: 10},
+        {scale: 1, opacity: 1}
+    ],
+    delay: anime.stagger(100) // increase delay by 100ms for each elements.
+});
 
-function emojiAnim() {
-    popmotion.spring ({
-        from: {
-            scale: 0,
-            rotate: 290,
-            scaleX: -1
-        },
-        to: {
-            scale: 1,
-            rotate: 270,
-            scaleX: -1
-        },
-        velocity: 0.8
-    }).start(leftEmoji.set)
 
-    popmotion.spring ({
-        from: {
-            delay: 1,
-            scale: 0,
-            rotate: 290,
-        },
-        to: {
-            scale: 1,
-            rotate: 270,
-        },
-        velocity: 0.8
-    }).start(rightEmoji.set)
+function newGameAnim() {
 
-    popmotion.spring ({
-        from: {
-            delay: 1,
-            scale: 0
-        },
-        to: {
-            scale: 1,
-        },
-        velocity: 0.8
-    }).start(emojiLeftText.set)
+    anime({
+        targets: '.emojiLeftText, .emojiRightText',
+        keyframes: [
+            {scale: 0, duration: 1},
+            {scale: 1}
+        ]
+    })
 
-    popmotion.spring ({
-        from: {
-            delay: 1,
-            scale: 0
-        },
-        to: {
-            scale: 1,
-        },
-        velocity: 0.8
-    }).start(emojiRightText.set)
+    anime({
+        targets: '.rightImage',
+        keyframes: [
+            {scale: 0, rotate: 360, duration: 10},
+            {scale: 1, rotate: 270}
+        ]
+    })
+
+    anime({
+        targets: '.leftImage',
+        keyframes: [
+            {scale: 0, rotate: 10, scaleX: -1, duration: 10},
+            {scale: 1, rotate: 90}
+        ]
+    })
+
+    anime({
+        targets: '.button',
+        keyframes: [
+            {scale: 1.1, duration: 100},
+            {scale: 1}
+        ]
+    })
+
+
 }
-
-
-
-
-

@@ -9,10 +9,10 @@ body {
     background-color: white;
 }
 
-/* .content {
-    animation: scale-in-center 1s both;
-    animation-delay: 1s;
-} */
+.content {
+    opacity: 0;
+    scale: 0;
+}
 
 .topBits {
     display: flex;
@@ -22,6 +22,8 @@ body {
 
 .topCol {
     text-align: center;
+    opacity: 0;
+    scale: 0;
 }
 
 .topImages {
@@ -198,22 +200,6 @@ button:focus { outline: none; }
       }
       55% {
         transform: scale(0.7);
-        animation-timing-function: ease-in;
-      }
-      72% {
-        transform: scale(1);
-        animation-timing-function: ease-out;
-      }
-      81% {
-        transform: scale(0.84);
-        animation-timing-function: ease-in;
-      }
-      89% {
-        transform: scale(1);
-        animation-timing-function: ease-out;
-      }
-      95% {
-        transform: scale(0.95);
         animation-timing-function: ease-in;
       }
       100% {
