@@ -34,15 +34,30 @@
     <div class="content">
     <div class="emojis">
         <div>
+            <b><p class="textMessage">You</p></b>
             <img class="leftImage"  alt="leftImage" src="Code.png">
             <b><p class="emojiLeftText">Code</p></b>
         </div>
 
-        <button onclick="newGame()" class="button">
-            GO !
-        </button>
+        <div class="options">
+            <button onclick="newGame()" class="button">
+                <img src="Scissors.png" style="height: 40px;">
+            </button>
 
+            <button onclick="newGame()" class="button">
+                <img src="Paper.png" style="height: 40px;">
+            </button>
+
+            <button onclick="newGame()" class="button">
+                <img src="Code.png" style="height: 40px; transform: rotate(270deg);">
+            </button>
+
+            <button onclick="newGame()" class="button">
+                <img src="Dice.png" style="height: 40px;">
+            </button>
+        </div>
         <div>
+            <b><p class="textMessage">Computer</p></b>
             <img class="rightImage" alt="rightImage" src="Paper.png">
             <b><p class="emojiRightText">Hand</p></b>
         </div>
