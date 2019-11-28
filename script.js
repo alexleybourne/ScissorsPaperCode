@@ -13,74 +13,75 @@ var sources = [
     "Code.png"
 ];
 
+var valueRight = ""
+var valueLeft = ""
+
+function scissorsPick() {
+    valueLeft = "Scissors.png"
+    newGame()
+
+}
+
+function paperPick() {
+    valueLeft = "Paper.png"
+    newGame()
+
+}
+
+function robotPick() {
+    valueLeft = "Code.png"
+    newGame()
+
+}
+
+function diceRoll() {
+    valueLeft = sources[Math.floor(Math.random()*sources.length)]
+    newGame()
+
+}
+
 function newGame() {
 
-var randomLeft = sources[Math.floor(Math.random()*sources.length)]
-var randomRight = sources[Math.floor(Math.random()*sources.length)]
+    // Computers Choice Maker
+    valueRight = sources[Math.floor(Math.random()*sources.length)]
 
-document.getElementsByClassName("leftImage")[0].src = `${randomLeft}`
-document.getElementsByClassName("emojiLeftText")[0].innerHTML = `${randomLeft.replace('.png','')}`
+    // User Pick
+    document.getElementsByClassName("leftImage")[0].src = `${valueLeft}`
+    document.getElementsByClassName("emojiLeftText")[0].innerHTML = `${valueLeft.replace('.png','')}`
 
-document.getElementsByClassName("rightImage")[0].src = `${randomRight}`,
-document.getElementsByClassName("emojiRightText")[0].innerHTML = `${randomRight.replace('.png','')}`
+    // Computer
+    document.getElementsByClassName("rightImage")[0].src = `${valueRight}`,
+    document.getElementsByClassName("emojiRightText")[0].innerHTML = `${valueRight.replace('.png','')}`
 
-newGameAnim()
+    newGameAnim()
 
- 
-function resultText(x){
-    document.getElementsByClassName("letters")[0].innerHTML = x
-}
+    function resultText(x){
+        document.getElementsByClassName("letters")[0].innerHTML = x
+    }
 
-if (randomLeft === randomRight) {
+    if (valueLeft === valueRight) {
 
-    resultText("DRAW")
+        resultText("DRAW")
 
-} else if (randomLeft.includes("S") && randomRight.includes("P")) {
+    } else if (valueLeft.includes("S") && valueRight.includes("P")) {
 
-    resultText("WINNER")
+        resultText("WINNER")
 
-} else if (randomLeft.includes("C") && randomRight.includes("S")) {
+    } else if (valueLeft.includes("C") && valueRight.includes("S")) {
 
-    resultText("WINNER")
+        resultText("WINNER")
 
-} else if (randomLeft.includes("P") && randomRight.includes("C")) {
+    } else if (valueLeft.includes("P") && valueRight.includes("C")) {
 
-    resultText("WINNER")
+        resultText("WINNER")
 
-}   else {
+    }   else {
 
-    resultText("LOSER")
+        resultText("LOSER")
 
-}
+    }
 
-
-
-// else if (randomLeft.includes("S") || randomLeft.includes("")) 
-// {
-//     resultText("DRAW")
-// } 
-// else if (randomLeft.includes("P")) 
-// {
-//     resultText("DRAW")
-// } 
-// else 
-// {
-//     resultText("DRAW")
-// }
-
-resultTextAnim()
-
-
-
-
-// if (randomLeft === randomRight) {
-//     document.getElementsByClassName("letters")[0].innerHTML = "DRAW"
-//     resultTextAnim()
-// } else if (randomLeft.includes("S")) {
-//     document.getElementsByClassName("letters")[0].innerHTML = "WINNER"
-//     resultTextAnim()
-// }
-
+    resultTextAnim()
 
 }
 
@@ -98,6 +99,23 @@ anime({
 
 anime({
     targets: '.topCol',
+    keyframes: [
+        {scale: 0, opacity: 0, duration: 10},
+        {scale: 1, opacity: 1}
+    ],
+    delay: anime.stagger(100) // increase delay by 100ms for each elements.
+});
+
+anime({
+    targets: '.textMessage',
+    keyframes: [
+        {scale: 0.2, translateY: -10, duration: 100},
+        {scale: 1, translateY: 0 }
+    ]
+})
+
+anime({
+    targets: '.button',
     keyframes: [
         {scale: 0, opacity: 0, duration: 10},
         {scale: 1, opacity: 1}
@@ -132,31 +150,31 @@ function newGameAnim() {
         ]
     })
 
-    anime({
-        targets: '.button',
-        keyframes: [
-            {scale: 1.1, duration: 100},
-            {scale: 1}
-        ]
-    })
+    // anime({
+    //     targets: '.button',
+    //     keyframes: [
+    //         {scale: 1.1, duration: 100},
+    //         {scale: 1}
+    //     ]
+    // })
 }
 
 
 
-function resultTextAnim(){
+function resultTextAnim() {
 
-// Wrap every letter in a span
-var textWrapper = document.querySelector('.ml6 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml6 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 
-anime.timeline()
-  .add({
-    delay: 3000,
-    targets: '.ml6 .letter',
-    translateY: ["1.1em", 0],
-    translateZ: 0,
-    duration: 750,
-    delay: (el, i) => 50 * i
-  });
+    anime.timeline()
+    .add({
+        delay: 3000,
+        targets: '.ml6 .letter',
+        translateY: ["1.1em", 0],
+        translateZ: 0,
+        duration: 750,
+        delay: (el, i) => 50 * i
+    });
 }
