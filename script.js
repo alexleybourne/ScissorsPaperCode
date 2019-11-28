@@ -4,9 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     resultTextAnim()
 })
 
-
-
-
 var sources = [
     "Scissors.png",
     "Paper.png",
@@ -87,7 +84,6 @@ function newGame() {
 
 
 
-
 // ANIMATIONS
 
 anime({
@@ -103,7 +99,7 @@ anime({
         {scale: 0, opacity: 0, duration: 10},
         {scale: 1, opacity: 1}
     ],
-    delay: anime.stagger(100) // increase delay by 100ms for each elements.
+    delay: anime.stagger(150) // increase delay by 100ms for each elements.
 });
 
 anime({
@@ -120,11 +116,19 @@ anime({
         {scale: 0, opacity: 0, duration: 10},
         {scale: 1, opacity: 1}
     ],
-    delay: anime.stagger(100) // increase delay by 100ms for each elements.
+    delay: anime.stagger(150) // increase delay by 100ms for each elements.
 });
 
 
 function newGameAnim() {
+
+    anime({
+        targets: '.textMessage',
+        keyframes: [
+            {scale: 0, duration: 1},
+            {scale: 1}
+        ]
+    })
 
     anime({
         targets: '.emojiLeftText, .emojiRightText',
