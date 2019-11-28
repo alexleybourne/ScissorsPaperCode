@@ -9,6 +9,28 @@ body {
     background-color: white;
 }
 
+/*  */
+
+.ml6 {
+position: relative;
+font-weight: 900;
+font-size: 5em;
+padding: 40px 0 0 0;
+}
+  
+.ml6 .text-wrapper {
+display: inline-block;
+overflow: hidden;
+}
+  
+.ml6 .letter {
+display: inline-block;
+line-height: 1em;
+}
+
+/*  */
+
+
 .content {
     opacity: 0;
     scale: 0;
@@ -28,7 +50,7 @@ body {
 
 .topImages {
     height: 120px;
-    width: 120px;
+    width: auto;
     padding: 10px;
 }
 
@@ -43,7 +65,7 @@ body {
     transform: rotate(90deg)scaleX(-1);
     width: 200px;
     height: auto;
-    padding: 50px;
+    padding: 0 50px 0 50px;
 }
 
 
@@ -51,12 +73,19 @@ body {
     transform: rotate(270deg);
     width: 200px;
     height: auto;
-    padding: 50px;
+    padding: 0 50px 0 50px;
 }
 
-.emojiText {
+.emojiRightText {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.emojiLeftText {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
 }
 
 .button {

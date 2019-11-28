@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    newGame()
+    // newGame()
     newGameAnim()
+    resultTextAnim()
 })
 
 
@@ -25,7 +26,65 @@ document.getElementsByClassName("emojiRightText")[0].innerHTML = `${randomRight.
 
 newGameAnim()
 
+ 
+function resultText(x){
+    document.getElementsByClassName("letters")[0].innerHTML = x
 }
+
+if (randomLeft === randomRight) {
+
+    resultText("DRAW")
+
+} else if (randomLeft.includes("S") && randomRight.includes("P")) {
+
+    resultText("WINNER")
+
+} else if (randomLeft.includes("C") && randomRight.includes("S")) {
+
+    resultText("WINNER")
+
+} else if (randomLeft.includes("P") && randomRight.includes("C")) {
+
+    resultText("WINNER")
+
+}   else {
+
+    resultText("LOSER")
+
+}
+
+
+
+// else if (randomLeft.includes("S") || randomLeft.includes("")) 
+// {
+//     resultText("DRAW")
+// } 
+// else if (randomLeft.includes("P")) 
+// {
+//     resultText("DRAW")
+// } 
+// else 
+// {
+//     resultText("DRAW")
+// }
+
+resultTextAnim()
+
+
+
+
+// if (randomLeft === randomRight) {
+//     document.getElementsByClassName("letters")[0].innerHTML = "DRAW"
+//     resultTextAnim()
+// } else if (randomLeft.includes("S")) {
+//     document.getElementsByClassName("letters")[0].innerHTML = "WINNER"
+//     resultTextAnim()
+// }
+
+
+}
+
+
 
 
 // ANIMATIONS
@@ -80,6 +139,24 @@ function newGameAnim() {
             {scale: 1}
         ]
     })
+}
 
 
+
+function resultTextAnim(){
+
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml6 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+
+anime.timeline()
+  .add({
+    delay: 3000,
+    targets: '.ml6 .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 750,
+    delay: (el, i) => 50 * i
+  });
 }
