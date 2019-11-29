@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     notificationAnim()
 
     setTimeout(function() {
-        resultText("FIRST TO 3")
+        resultText("First to 3 Wins!")
         resultTextAnim()
 
         anime({
@@ -83,28 +83,28 @@ function newGame() {
 
     if (valueLeft === valueRight) {
 
-        resultText("DRAW")
+        resultText("Draw")
         userScore++
         botScore++
 
     } else if (valueLeft.includes("S") && valueRight.includes("P")) {
 
-        resultText("WINNER")
+        resultText("Winner")
         userScore++
 
     } else if (valueLeft.includes("C") && valueRight.includes("S")) {
 
-        resultText("WINNER")
+        resultText("Winner")
         userScore++
 
     } else if (valueLeft.includes("P") && valueRight.includes("C")) {
 
-        resultText("WINNER")
+        resultText("Winner")
         userScore++
 
     }   else {
 
-        resultText("LOSER")
+        resultText("Loser")
         botScore++
 
     }
@@ -125,19 +125,19 @@ function newGame() {
         if (userScore === botScore) {
             document.getElementById("Button").disabled = true
             setTimeout(function() {
-                resultText("ITS A DRAW")
+                resultText("It's a Draw")
                 resetGame()
               }, 1000);
         } else if (userScore > botScore) {
             document.getElementById("Button").disabled = true
             setTimeout(function() {
-                resultText("YOU'RE A WINNER")
+                resultText("You Win")
                 resetGame()
               }, 1000);
         } else {
             document.getElementById("Button").disabled = true
             setTimeout(function() {
-                resultText("YOU'RE A LOSER")
+                resultText("You Lost")
                 resetGame()
               }, 1000);
         }
@@ -154,14 +154,6 @@ function resetGame() {
     currentRound = 0
     setTimeout(function() {
         location.reload()
-        anime({
-            targets: '.button',
-            keyframes: [
-                {scale: 0, opacity: 0, duration: 10},
-                {scale: 1, opacity: 1}
-            ],
-            delay: anime.stagger(150) // increase delay by 100ms for each elements.
-        });
     }, 2000);
 }
 
