@@ -44,6 +44,10 @@ function diceRoll() {
 
 }
 
+function resultText(x){
+    document.getElementsByClassName("letters")[0].innerHTML = x
+}
+
 function newGame() {
 
     document.getElementById("Button").disabled = false
@@ -60,10 +64,6 @@ function newGame() {
     document.getElementsByClassName("emojiRightText")[0].innerHTML = `${valueRight.replace('.png','')}`
 
     newGameAnim()
-
-    function resultText(x){
-        document.getElementsByClassName("letters")[0].innerHTML = x
-    }
 
     if (valueLeft === valueRight) {
 
@@ -107,16 +107,19 @@ function newGame() {
 
     function whoWins(){
         if (userScore === botScore) {
+            document.getElementById("Button").disabled = true
             setTimeout(function() {
                 resultText("ITS A DRAW")
                 resetGame()
               }, 1000);
         } else if (userScore > botScore) {
+            document.getElementById("Button").disabled = true
             setTimeout(function() {
                 resultText("YOU'RE A WINNER")
                 resetGame()
               }, 1000);
         } else {
+            document.getElementById("Button").disabled = true
             setTimeout(function() {
                 resultText("YOU'RE A LOSER")
                 resetGame()
