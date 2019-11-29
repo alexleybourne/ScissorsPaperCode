@@ -64,6 +64,37 @@ line-height: 1em;
     padding: 0 20px 0 20px;
 }
 
+.notifScoreBot {
+    position: absolute;
+    background: #ff0040;
+    color: white;
+    font-size: 14px;
+    line-height: 10px;
+    text-align: center;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    padding: 10px;
+    left: 66%;
+    top: -2%;
+    z-index: 1;
+}
+
+.notifScoreUser {
+    position: absolute;
+    background: #ff0040;
+    color: white;
+    font-size: 14px;
+    line-height: 10px;
+    text-align: center;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    padding: 10px;
+    left: 31%;
+    top: -2%;
+    z-index: 1;
+}
 
 .textMessage {
 	position: relative;

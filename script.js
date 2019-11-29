@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // newGame()
     newGameAnim()
     resultTextAnim()
+    notificationAnim()
 })
 
 var sources = [
@@ -9,6 +10,9 @@ var sources = [
     "Paper.png",
     "Code.png"
 ];
+
+var userScore = 0
+var botScore = 0
 
 var valueRight = ""
 var valueLeft = ""
@@ -59,26 +63,35 @@ function newGame() {
     if (valueLeft === valueRight) {
 
         resultText("DRAW")
+        userScore++
+        botScore++
 
     } else if (valueLeft.includes("S") && valueRight.includes("P")) {
 
         resultText("WINNER")
+        userScore++
 
     } else if (valueLeft.includes("C") && valueRight.includes("S")) {
 
         resultText("WINNER")
+        userScore++
 
     } else if (valueLeft.includes("P") && valueRight.includes("C")) {
 
         resultText("WINNER")
+        userScore++
 
     }   else {
 
         resultText("LOSER")
+        botScore++
 
     }
 
+    document.getElementsByClassName("notifScoreUser")[0].innerHTML = `${userScore}`
+    document.getElementsByClassName("notifScoreBot")[0].innerHTML = `${botScore}`
     resultTextAnim()
+    
 
 }
 
@@ -171,7 +184,6 @@ function resultTextAnim() {
     var textWrapper = document.querySelector('.ml6 .letters');
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-
     anime.timeline()
     .add({
         delay: 3000,
@@ -181,4 +193,17 @@ function resultTextAnim() {
         duration: 750,
         delay: (el, i) => 50 * i
     });
+}
+
+function notificationAnim() {
+
+    
+    anime({
+        targets: '.notifScoreUser',
+        keyframes: [
+            {scale: 0.2, translateY: -10, duration: 100},
+            {scale: 1, translateY: 0}
+        ]
+     })
+
 }
