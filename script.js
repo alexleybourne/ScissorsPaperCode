@@ -45,7 +45,9 @@ function diceRoll() {
 }
 
 function newGame() {
-    
+
+    document.getElementById("Button").disabled = false
+
     // Computers Choice Maker
     valueRight = sources[Math.floor(Math.random()*sources.length)]
 
@@ -131,6 +133,17 @@ function resetGame() {
     resultTextAnim()
     notificationAnim()
     currentRound = 0
+    setTimeout(function() {
+        location.reload()
+        anime({
+            targets: '.button',
+            keyframes: [
+                {scale: 0, opacity: 0, duration: 10},
+                {scale: 1, opacity: 1}
+            ],
+            delay: anime.stagger(150) // increase delay by 100ms for each elements.
+        });
+    }, 2000);
 }
 
 
@@ -170,8 +183,9 @@ anime({
     delay: anime.stagger(150) // increase delay by 100ms for each elements.
 });
 
-
 function newGameAnim() {
+
+    resultTextAnim()
 
     anime({
         targets: '.textMessage',
