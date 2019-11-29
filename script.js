@@ -3,6 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
     newGameAnim()
     resultTextAnim()
     notificationAnim()
+
+    setTimeout(function() {
+        resultText("FIRST TO 3")
+        resultTextAnim()
+
+        anime({
+            targets: '.button',
+            keyframes: [
+                {scale: 0, opacity: 0, duration: 10},
+                {scale: 1, opacity: 1}
+            ],
+            delay: anime.stagger(150) // increase delay by 100ms for each elements.
+        });
+
+    }, 1500);
+
 })
 
 var sources = [
@@ -177,14 +193,6 @@ anime({
     ]
 })
 
-anime({
-    targets: '.button',
-    keyframes: [
-        {scale: 0, opacity: 0, duration: 10},
-        {scale: 1, opacity: 1}
-    ],
-    delay: anime.stagger(150) // increase delay by 100ms for each elements.
-});
 
 function newGameAnim() {
 
