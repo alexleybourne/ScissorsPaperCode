@@ -175,7 +175,18 @@ line-height: 1em;
 
 button:focus { outline: none; }
 
-
+.restartbutton {
+    opacity: 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 100px;
+    margin: 2px;
+}
 
 /* CSS Animations */
 

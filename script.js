@@ -11,6 +11,9 @@ var sources = [
     "Code.png"
 ];
 
+var maxScore = 3
+var currentRound = 0
+
 var userScore = 0
 var botScore = 0
 
@@ -42,7 +45,7 @@ function diceRoll() {
 }
 
 function newGame() {
-
+    
     // Computers Choice Maker
     valueRight = sources[Math.floor(Math.random()*sources.length)]
 
@@ -91,8 +94,43 @@ function newGame() {
     document.getElementsByClassName("notifScoreUser")[0].innerHTML = `${userScore}`
     document.getElementsByClassName("notifScoreBot")[0].innerHTML = `${botScore}`
     resultTextAnim()
-    
+    notificationAnim()
+    currentRound++
 
+    if (userScore === maxScore) {
+        whoWins()
+    } else if (botScore === maxScore) {
+        whoWins()
+    }
+
+    function whoWins(){
+        if (userScore === botScore) {
+            setTimeout(function() {
+                resultText("ITS A DRAW")
+                resetGame()
+              }, 1000);
+        } else if (userScore > botScore) {
+            setTimeout(function() {
+                resultText("YOU'RE A WINNER")
+                resetGame()
+              }, 1000);
+        } else {
+            setTimeout(function() {
+                resultText("YOU'RE A LOSER")
+                resetGame()
+              }, 1000);
+        }
+    }
+}
+
+
+function resetGame() {
+    userScore = 0
+    botScore = 0
+    hideButtons()
+    resultTextAnim()
+    notificationAnim()
+    currentRound = 0
 }
 
 
@@ -177,6 +215,18 @@ function newGameAnim() {
 }
 
 
+function hideButtons() {
+    anime({
+        targets: '.button',
+        keyframes: [
+            {scale: 1, opacity: 1, duration: 10},
+            {scale: 0, opacity: 0}
+        ],
+        delay: anime.stagger(150) // increase delay by 100ms for each elements.
+    });
+    document.getElementById("Button").disabled = true
+}
+
 
 function resultTextAnim() {
 
@@ -197,9 +247,28 @@ function resultTextAnim() {
 
 function notificationAnim() {
 
-    
+    if (userScore === 0) {
+        document.getElementsByClassName("notifScoreUser")[0].style.visibility = "hidden"
+    } else {
+        document.getElementsByClassName("notifScoreUser")[0].style.visibility = "visible"
+    }
+
+    if (botScore === 0) {
+        document.getElementsByClassName("notifScoreBot")[0].style.visibility = "hidden"
+    } else {
+        document.getElementsByClassName("notifScoreBot")[0].style.visibility = "visible"
+    }
+
     anime({
         targets: '.notifScoreUser',
+        keyframes: [
+            {scale: 0.2, translateY: -10, duration: 100},
+            {scale: 1, translateY: 0}
+        ]
+     })
+
+     anime({
+        targets: '.notifScoreBot',
         keyframes: [
             {scale: 0.2, translateY: -10, duration: 100},
             {scale: 1, translateY: 0}

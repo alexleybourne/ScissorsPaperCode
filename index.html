@@ -41,22 +41,23 @@
         </div>
 
         <div class="options">
-            <button onclick="scissorsPick()" class="button">
+            <button onclick="scissorsPick()" class="button" id="Button">
                 <img src="Scissors.png" class="buttonImage" style="height: 40px;">
             </button>
 
-            <button onclick="paperPick()" class="button">
+            <button onclick="paperPick()" class="button" id="Button">
                 <img src="Paper.png" class="buttonImage" style="height: 40px;">
             </button>
 
-            <button onclick="robotPick()" class="button">
+            <button onclick="robotPick()" class="button" id="Button">
                 <img src="Code.png" class="buttonImage codeBotButton" style="height: 40px;">
             </button>
 
-            <button onclick="diceRoll()" class="button">
+            <button onclick="diceRoll()" class="button" id="Button">
                 <img src="Dice.png" class="buttonImage" style="height: 40px;">
             </button>
         </div>
+
         <div>
             <b><p class="notifScoreBot">0</p></b>
             <b><p class="textMessage">Computer</p></b>
@@ -64,13 +65,17 @@
             <b><p class="emojiRightText">Hand</p></b>
         </div>
     </div>
-    <br>
     <p style="font-size: 10px;" >Created by <a href="https://www.alexleybourne.com/" target="blank">Alex Leybourne</a></p>
     </div>
 
 
     <!-- Anime JS ! -->
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+
+
+    <!-- Confetti Time ! -->
+    <script src="confetti.js"></script>
+
 
     <script src="script.js"></script>
 </body>
