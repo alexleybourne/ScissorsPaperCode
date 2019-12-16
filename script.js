@@ -158,7 +158,6 @@ function resetGame() {
 }
 
 
-
 // ANIMATIONS
 
 anime({

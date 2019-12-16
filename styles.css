@@ -65,7 +65,7 @@ line-height: 1em;
 }
 
 .notifScoreBot {
-    position: absolute;
+    position: relative;
     background: #ff0040;
     color: white;
     font-size: 14px;
@@ -75,13 +75,13 @@ line-height: 1em;
     width: 10px;
     height: 10px;
     padding: 10px;
-    left: 66%;
-    top: -2%;
+    top: 30px;
+    left: 190px;
     z-index: 1;
 }
 
 .notifScoreUser {
-    position: absolute;
+    position: relative;
     background: #ff0040;
     color: white;
     font-size: 14px;
@@ -91,8 +91,8 @@ line-height: 1em;
     width: 10px;
     height: 10px;
     padding: 10px;
-    left: 31%;
-    top: -2%;
+    left: 70px;
+    top: 30px;
     z-index: 1;
 }
 
@@ -217,6 +217,15 @@ button:focus { outline: none; }
 /*  Responsiveness */
 
 @media only screen and (max-width: 700px) {
+
+    body {
+        height: 100%;
+    }
+
+    .topBits {
+        padding: 10px;
+    }
+
     .topImages {
         height: 50px;
     }
@@ -230,17 +239,23 @@ button:focus { outline: none; }
         font-size: 0;
     }
 
+    .content {
+        height: 100%;
+    }
 
     .emojis {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column-reverse;
+        height: 75vh;
+        justify-content: space-around;
     }
 
     .options {
         display: flex;
         flex-direction: row;
+        order: -1;
     }
 
     .button {
@@ -250,12 +265,38 @@ button:focus { outline: none; }
 
     .leftImage {
         width: 15vh;
+        padding: 0;
         height: auto;
     }
     
     .rightImage {
         width: 15vh;
+        padding: 0;
         height: auto;
+    }
+
+    .emojiLeftText {
+        position: absolute;
+        opacity: 0;
+        scale: 0;
+    }
+
+    .emojiRightText {
+        position: absolute;
+        opacity: 0;
+        scale: 0;
+    }
+
+    .textMessage {
+        left: 0;
+    }
+
+    .notifScoreUser {
+        left: 100px;
+    }
+
+    .notifScoreBot {
+        left: 100px;
     }
 }
   
