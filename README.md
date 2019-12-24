@@ -6,5 +6,4 @@ Just me playing around with JS animations
 The game is a very simple version of scissors paper rock. Where rock has been replaced by code because well.... coding rocks!
 
 Visit the site: 
-[Scissors Paper Code]([https://alexleybourne.github.io/ScissorsPaperCode/](https://alexleybourne.github.io/ScissorsPaperCode/))
-
+[Scissors Paper Code](https://alexleybourne.github.io/ScissorsPaperCode/)
