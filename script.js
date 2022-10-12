@@ -1,3 +1,5 @@
+// This code is really gross and I have come a long way since then 😅
+
 document.addEventListener('DOMContentLoaded', () => {
   // newGame()
   newGameAnim();

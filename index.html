@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- This code is really gross and I have come a long way since then 😅 -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,7 +27,8 @@
     <link rel="manifest" href="favicon/site.webmanifest" />
 
     <!-- Anime JS ! -->
-    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <!-- animejs@3.0.1 -->
+    <script src="anime.min.js"></script>
     
     <!-- Confetti Time ! -->
     <script src="confetti.js"></script>
@@ -70,8 +72,8 @@
         <div>
           <b><p class="notifScoreUser">0</p></b>
           <b><p class="textMessage">You</p></b>
-          <img class="leftImage" alt="leftImage" src="Code.png" />
-          <b><p class="emojiLeftText">Code</p></b>
+          <img class="leftImage" alt="leftImage" src="Thinking.png" />
+          <b><p class="emojiLeftText">Thinking</p></b>
         </div>
 
         <div class="options">
@@ -99,15 +101,15 @@
         <div>
           <b><p class="notifScoreBot">0</p></b>
           <b><p class="textMessage">Computer</p></b>
-          <img class="rightImage" alt="rightImage" src="Paper.png" />
-          <b><p class="emojiRightText">Hand</p></b>
+          <img class="rightImage" alt="rightImage" src="Thinking.png" />
+          <b><p class="emojiRightText">Thinking</p></b>
         </div>
       </div>
-      <p style="font-size: 10px">
+      <p class="created-by">
         Created by
-        <a href="https://www.alexleybourne.dev/" target="blank"
-          >Alex Leybourne</a
-        >
+        <a href="https://www.alexleybourne.dev/" target="blank">
+            Alex Leybourne
+        </a>
       </p>
     </div>
   </body>
