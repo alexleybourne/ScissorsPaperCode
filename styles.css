@@ -37,13 +37,10 @@ display: inline-block;
 line-height: 1em;
 }
 
-/*  */
-
-
-.content {
+/* .content {
     opacity: 0;
     scale: 0;
-}
+} */
 
 .topBits {
     padding: 10px 0 0 0;
@@ -54,8 +51,8 @@ line-height: 1em;
 
 .topCol {
     text-align: center;
-    opacity: 0;
-    scale: 0;
+    /* opacity: 0;
+    scale: 0; */
 }
 
 .topImages {

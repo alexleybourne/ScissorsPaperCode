@@ -1,82 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Scissors Paper Code</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-
-    <link rel = "stylesheet" type = "text/css" href = "styles.css" />
-</head>
-<body>
-    <div class="topBits" style="line-height: 1px;">
-
-    <div class="topCol top1" ><img alt="Scissors" class="topImages" src="Scissors.png" ><p style="font-size: 20px;"><b>Scissors</b></p></div>
-
-    <div class="topCol top2" ><img alt="Paper" class="topImages" src="Paper.png"><p style="font-size: 20px;"><b> Paper </b></p></div>
-
-    <div class="topCol top3" ><img alt="Robot" class="topImages" src="Code.png" style="transform: rotate(90deg)scaleX(-1);"><p style="font-size: 20px;"><b>Code</b></p></div>
-
-    </div>
-
-
-    <div class="ml6">
-            <span class="text-wrapper">
-                <span class="letters">Let's Play!</span>
-            </span>
-    </div>
-
-    <div class="content">
-    <div class="emojis">
-        <div>
-            <b><p class="notifScoreUser">0</p></b>
-            <b><p class="textMessage">You</p></b>
-            <img class="leftImage"  alt="leftImage" src="Code.png">
-            <b><p class="emojiLeftText">Code</p></b>
-        </div>
-
-        <div class="options">
-            <button onclick="scissorsPick()" class="button" id="Button">
-                <img src="Scissors.png" class="buttonImage" style="height: 40px;">
-            </button>
-
-            <button onclick="paperPick()" class="button" id="Button">
-                <img src="Paper.png" class="buttonImage" style="height: 40px;">
-            </button>
-
-            <button onclick="robotPick()" class="button" id="Button">
-                <img src="Code.png" class="buttonImage codeBotButton" style="height: 40px;">
-            </button>
-
-            <button onclick="diceRoll()" class="button" id="Button">
-                <img src="Dice.png" class="buttonImage" style="height: 40px;">
-            </button>
-        </div>
-
-        <div>
-            <b><p class="notifScoreBot">0</p></b>
-            <b><p class="textMessage">Computer</p></b>
-            <img class="rightImage" alt="rightImage" src="Paper.png">
-            <b><p class="emojiRightText">Hand</p></b>
-        </div>
-    </div>
-    <p style="font-size: 10px;" >Created by <a href="https://www.alexleybourne.dev/" target="blank">Alex Leybourne</a></p>
-    </div>
-
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
 
     <!-- Anime JS ! -->
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
-
-
+    
     <!-- Confetti Time ! -->
     <script src="confetti.js"></script>
-
-
+    
+    <!-- My Logic -->
     <script src="script.js"></script>
-</body>
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="topBits" style="line-height: 1px">
+      <div class="topCol top1">
+        <img alt="Scissors" class="topImages" src="Scissors.png" />
+        <p style="font-size: 20px"><b>Scissors</b></p>
+      </div>
+
+      <div class="topCol top2">
+        <img alt="Paper" class="topImages" src="Paper.png" />
+        <p style="font-size: 20px"><b> Paper </b></p>
+      </div>
+
+      <div class="topCol top3">
+        <img
+          alt="Robot"
+          class="topImages"
+          src="Code.png"
+          style="transform: rotate(90deg) scaleX(-1)"
+        />
+        <p style="font-size: 20px"><b>Code</b></p>
+      </div>
+    </div>
+
+    <div class="ml6">
+      <span class="text-wrapper">
+        <span class="letters">Let's Play!</span>
+      </span>
+    </div>
+
+    <div class="content">
+      <div class="emojis">
+        <div>
+          <b><p class="notifScoreUser">0</p></b>
+          <b><p class="textMessage">You</p></b>
+          <img class="leftImage" alt="leftImage" src="Code.png" />
+          <b><p class="emojiLeftText">Code</p></b>
+        </div>
+
+        <div class="options">
+          <button onclick="scissorsPick()" class="button" id="Button">
+            <img src="Scissors.png" class="buttonImage" style="height: 40px" />
+          </button>
+
+          <button onclick="paperPick()" class="button" id="Button">
+            <img src="Paper.png" class="buttonImage" style="height: 40px" />
+          </button>
+
+          <button onclick="robotPick()" class="button" id="Button">
+            <img
+              src="Code.png"
+              class="buttonImage codeBotButton"
+              style="height: 40px"
+            />
+          </button>
+
+          <button onclick="diceRoll()" class="button" id="Button">
+            <img src="Dice.png" class="buttonImage" style="height: 40px" />
+          </button>
+        </div>
+
+        <div>
+          <b><p class="notifScoreBot">0</p></b>
+          <b><p class="textMessage">Computer</p></b>
+          <img class="rightImage" alt="rightImage" src="Paper.png" />
+          <b><p class="emojiRightText">Hand</p></b>
+        </div>
+      </div>
+      <p style="font-size: 10px">
+        Created by
+        <a href="https://www.alexleybourne.dev/" target="blank"
+          >Alex Leybourne</a
+        >
+      </p>
+    </div>
+  </body>
 </html>
